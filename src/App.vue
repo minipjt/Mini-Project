@@ -1,28 +1,40 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <v-app-bar app color="primary">
+      <v-toolbar-title class="mx-auto cursor-pointer" @click="$router.push('/')">{{ name }} <span class="emoji">🎶</span>
+      </v-toolbar-title>
+    </v-app-bar>
+    <v-main>
+      <router-view></router-view>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
+
   components: {
-    HelloWorld
-  }
-}
+  },
+
+  data: () => ({
+    name: 'Emoji Music Player'
+  }),
+
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.v-application {
+  font-family: 'Albert Sans', sans-serif;
+}
+
+.emoji {
+  font-family: 'Noto Emoji', sans-serif;
+}
+
+.cursor-pointer{
+  cursor: pointer;
 }
 </style>
