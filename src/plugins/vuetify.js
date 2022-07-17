@@ -1,5 +1,6 @@
 import Vue from 'vue';
-import Vuetify from 'vuetify/lib/framework';
+import Vuetify from 'vuetify/lib';
+import colors from "vuetify/lib/util/colors";
 
 Vue.use(Vuetify);
 
@@ -8,7 +9,8 @@ const options = {
         dark: true,
         themes: {
             dark: {
-                primary: 'black'
+                primary: colors.shades.white,
+                secondary: colors.blue,
             }
         }
     }

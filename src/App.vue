@@ -1,9 +1,5 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary">
-      <v-toolbar-title class="mx-auto cursor-pointer" @click="$router.push('/')">{{ name }} <span class="emoji">🎶</span>
-      </v-toolbar-title>
-    </v-app-bar>
     <v-main>
       <router-view></router-view>
     </v-main>
@@ -22,19 +18,33 @@ export default {
     name: 'Emoji Music Player'
   }),
 
+  created() {
+    this.$store.dispatch('continueSession');
+    this.$store.dispatch('getUsers');
+  }
+
 };
 </script>
 
 <style>
 .v-application {
-  font-family: 'Albert Sans', sans-serif;
+  font-family: 'Albert Sans', sans-serif !important;
+  background: #000000 !important;
 }
 
 .emoji {
   font-family: 'Noto Emoji', sans-serif;
 }
 
-.cursor-pointer{
+.cursor-pointer {
   cursor: pointer;
+}
+
+.v-btn {
+  text-transform: unset !important;
+}
+
+.v-main__wrap > div {
+  height: 100%;
 }
 </style>
