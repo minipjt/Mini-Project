@@ -89,7 +89,7 @@ export default {
             } else {
                 const users = this.$store.state.users;
                 if (!users.map(u => u.email).includes(this.user.email)) {
-                    this.showSnackBar('An account with this email id does\'nt exist', 'red');
+                    this.showSnackBar('Account with this email id does\'nt exist', 'red');
                     this.loading = false;
                     return;
                 }
